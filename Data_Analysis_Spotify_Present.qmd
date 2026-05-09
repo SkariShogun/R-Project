@@ -1,0 +1,133 @@
+---
+title: "Modeling Song Popularity"
+author: "Khrystyna Vinichuk"
+format: 
+  revealjs:
+    theme: dark
+    slide-number: true
+---
+
+## Problem
+
+What makes a song popular?
+
+- Energy  
+- Danceability  
+- Tempo  
+
+Understanding these factors can help predict trends in music and explain listener preferences.
+
+---
+
+## Data
+
+Dataset includes:
+
+- Energy  
+- Danceability  
+- Tempo  
+- Popularity  
+
+The data was cleaned and selected to focus only on the most relevant variables for analysis.
+
+---
+
+## Energy vs Popularity
+
+![](Visualization/Energy_vs_Popularity.png){fig-align="center"}
+
+- Weak to moderate relationship  
+- Slight positive trend  
+
+Higher energy songs tend to attract attention, but energy alone does not guarantee success.
+
+---
+
+## Danceability vs Popularity
+
+![](Visualization/Danceability_vs_Popularity.png){fig-align="center"}
+
+- Stronger relationship  
+- More danceable → more popular  
+
+Danceability appears to be one of the key factors influencing listener engagement.
+
+---
+
+## Tempo vs Popularity
+
+![](Visualization/Tempo_vs_Popularity.png){fig-align="center"}
+
+- Weak relationship  
+- Not a strong predictor  
+
+Songs with very different tempos can still achieve similar levels of popularity.
+
+---
+
+## Correlation Matrix
+
+![](Visualization/Correlation_Matrix.png){fig-align="center"}
+
+- Danceability strongest  
+- Tempo weakest  
+
+This confirms that not all features contribute equally to popularity.
+
+---
+
+## Model
+
+Linear Regression:
+
+$$
+Popularity = a + b1·Energy + b2·Danceability + b3·Tempo
+$$  
+
+The model estimates how each feature contributes to the final popularity score.
+
+---
+
+## Actual vs Predicted
+
+![](Visualization/Actual_vs_Predicted.png){fig-align="center"}
+
+- Model captures trend  
+- Not perfectly accurate  
+
+Predictions follow the general pattern, but there is still noticeable deviation.
+
+---
+
+## Limitations
+
+- Simple model  
+- Other factors matter:
+  - Trends  
+  - Marketing  
+  - Artist popularity  
+
+The model does not include social or cultural influences, which can be very important.
+
+---
+
+## Conclusion
+
+- Danceability matters most  
+- Tempo matters least  
+- Model gives reasonable prediction  
+
+Even though the model is simple, it provides useful insights into what drives song popularity.
+
+## Sources
+
+The following resources were used during the creation of this project:
+
+- [Spotify Dataset (2010–2019)](https://github.com/Demibolt007/Spotify-Streaming-Insights-2010-2019/blob/main/Spotify%20Dataset.csv)  
+  Used as the main dataset for analyzing relationships between song features and popularity.
+
+- [Scikit-learn Documentation](https://scikit-learn.org/stable/)  
+  Used for implementing the linear regression model and understanding machine learning functions.
+
+- [Spotify Streaming Insights Repository](https://github.com/Demibolt007/Spotify-Streaming-Insights-2010-2019)  
+  Used as an additional reference for understanding the dataset structure and project context.

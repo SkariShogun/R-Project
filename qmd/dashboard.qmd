@@ -1,0 +1,210 @@
+---
+title: "Spotify Popularity Dashboard"
+author: "Khrystyna Vinichuk"
+
+format:
+  html:
+    theme: cosmo
+    toc: false
+    number-sections: false
+    page-layout: full
+    embed-resources: true
+
+---
+
+<style>
+
+body {
+    background-color: #f8f9fa;
+}
+
+.panel {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 10px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.08);
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+img {
+    width: 100%;
+}
+
+.small-text {
+    font-size: 0.95rem;
+}
+
+</style>
+
+# Spotify Song Popularity Analysis
+
+:::: {.columns}
+
+::: {.column width="35%"}
+
+<div class="panel">
+
+## Project Overview
+
+This project analyzes how musical features influence song popularity on Spotify using:
+
+- Data visualization
+- Correlation analysis
+- Linear regression
+
+### Variables
+
+- Energy
+- Danceability
+- Tempo
+- Popularity
+
+## Linear Regression Model
+
+$$
+Popularity = a + b_1 \cdot Energy + 
+$$
+
+$$
++ b_2 \cdot Danceability + b_3 \cdot Tempo
+$$
+
+### Key Findings
+
+- Danceability has the strongest influence
+- Energy has moderate impact
+- Tempo contributes the least
+
+</div>
+
+:::
+
+::: {.column width="65%"}
+
+<div class="panel">
+
+## Correlation Matrix
+
+![](Visualization/Correlation_Matrix.png)
+
+<div class="small-text">
+
+The matrix demonstrates relationships between all analyzed variables.
+
+Danceability has the strongest correlation with popularity, while tempo has the weakest relationship.
+
+</div>
+
+</div>
+
+:::
+
+::::
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+<div class="panel">
+
+## Energy vs Popularity
+
+![](Visualization/Energy_vs_Popularity.png)
+
+<div class="small-text">
+
+Songs with higher energy levels tend to be slightly more popular.
+
+</div>
+
+</div>
+
+:::
+
+::: {.column width="33%"}
+
+<div class="panel">
+
+## Danceability vs Popularity
+
+![](Visualization/Danceability_vs_Popularity.png)
+
+<div class="small-text">
+
+Danceability demonstrates the strongest positive relationship with popularity.
+
+</div>
+
+</div>
+
+:::
+
+::: {.column width="33%"}
+
+<div class="panel">
+
+## Tempo vs Popularity
+
+![](Visualization/Tempo_vs_Popularity.png)
+
+<div class="small-text">
+
+Tempo alone is not a strong predictor of popularity.
+
+</div>
+
+</div>
+
+:::
+
+::::
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="100%"}
+
+<div class="panel">
+
+## Actual vs Predicted Values
+
+![](Visualization/Actual_vs_Predicted.png)
+
+<div class="small-text">
+
+The regression model captures general popularity trends reasonably well, although external factors still influence prediction accuracy.
+
+</div>
+
+</div>
+
+:::
+
+::::
+
+<br>
+
+<div class="panel">
+
+## Conclusion
+
+The analysis demonstrates that musical characteristics can partially explain song popularity.
+
+Among all analyzed variables:
+
+- Danceability is the strongest predictor
+- Energy has moderate influence
+- Tempo has minimal impact
+
+This project also demonstrates how machine learning and data analysis can be applied to real-world music datasets.
+
+</div>

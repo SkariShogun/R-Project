@@ -47,9 +47,9 @@ Linear regression is a statistical and mathematical method used to describe how 
 
 The model can be written as:
 
-$$
+$$ 
 Popularity = a + b_1 \cdot Energy + b_2 \cdot Danceability + b_3 \cdot Tempo
-$$
+$$ {#eq-regression}
 
 Here, $(a)$ is the intercept (constant term), and coefficients $(b_1)$, $(b_2)$, and $(b_3)$ represent how much the popularity changes when the corresponding feature increases by one unit, assuming other variables remain constant.
 
@@ -61,7 +61,7 @@ The error function is:
 
 $$
 MSE = \frac{1}{n} \sum (y - y_{pred})^2
-$$
+$$ {#eq-mse}
 
 The model is trained using the least squares method, which finds coefficients that minimize the total squared error.
 
@@ -84,6 +84,22 @@ Tempo represents the speed of a song, measured in beats per minute (BPM).
 Popularity is a numerical value representing how well a track is received by listeners.
 
 The dataset was cleaned by selecting only relevant columns and renaming them for simplicity.
+
+## Sample of Dataset
+
+```{python}
+#| echo: false
+
+import pandas as pd
+
+df = pd.read_csv('..\Spotify Dataset.csv')
+
+df = df[["Energy", "Danceability", "Bpm", "Popularity"]]
+
+df.columns = ["energy", "danceability", "tempo", "popularity"]
+
+df.head(10)
+```
 
 # Analysis
 
@@ -139,7 +155,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 # Load dataset
-df = pd.read_csv('Spotify Dataset.csv')
+df = pd.read_csv('..\Spotify Dataset.csv')
 
 # Select important columns
 df = df[["Energy", "Danceability", "Bpm", "Popularity"]]
